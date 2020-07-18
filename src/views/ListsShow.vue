@@ -1,9 +1,11 @@
 <template>
   <div class="lists-show">
     <h2>{{ list.name }}</h2>
-    <div v-for="item in items"></div>
-    <p>Items: {{ list.items }}</p>
-
+    <div v-for="item in list.items">
+      <ul>
+        <li class="item">{{ item.description }}</li>
+      </ul>
+    </div>
     <router-link to="/home">Back to all lists</router-link>
   </div>
 </template>

@@ -11,7 +11,7 @@
       </div>
     </div>
     <div v-for="list in lists">
-      <router-link v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
+      <router-link class="item" v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
     </div>
   </div>
 </template>
