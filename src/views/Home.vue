@@ -7,11 +7,11 @@
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <input type="text" v-model="newListName" />
-        <button v-on:click="createList()">Create A New EssentiaList</button>
+        <button v-on:click="createList()">Create A New List</button>
       </div>
     </div>
     <div v-for="list in lists">
-      <ul>{{ list.name }}</ul>
+      <router-link v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
     </div>
   </div>
 </template>
