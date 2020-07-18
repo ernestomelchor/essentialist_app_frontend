@@ -1,20 +1,18 @@
-# essentialist_app_frontend
+# essentialist_app
 
-## Project setup
-```
-npm install
-```
+#backend
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Description:
+Welcome to the EssentiaList: A Todo App built for those who want to focus only on the essentials!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+This is the frontend to this app. It was built using JavaScript and frontend framework Vue.js.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# essentialist_app_frontend
+Technologies:
+
+1. Ruby and Ruby-On-Rails for the backend framework.
+2. JavaScript and Vue.js for the frontend framework.
+3. Postgres and SQL for the relational database management system.
+
+How to Get Started:
+
+1. Clone backend and frontend repos.
