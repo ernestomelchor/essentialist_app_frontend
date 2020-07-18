@@ -1,11 +1,13 @@
 <template>
   <div class="home">
-    <h1>Your Lists</h1>
+    <h1>Your EssentiaLists</h1>
     <div>
       <div>
-        Enter Name of New List:
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        </ul>
         <input type="text" v-model="newListName" />
-        <button v-on:click="createList()">Create A New List</button>
+        <button v-on:click="createList()">Create A New EssentiaList</button>
       </div>
     </div>
     <div v-for="list in lists">
@@ -23,7 +25,8 @@ export default {
   data: function() {
     return {
       lists: [],
-      newListName: ""
+      newListName: "",
+      errors: []
     };
   },
   created: function() {
