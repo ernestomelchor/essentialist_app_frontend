@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>EssentiaList is all about helping you prioritize life's essentials!</h1>
   </div>
 </template>

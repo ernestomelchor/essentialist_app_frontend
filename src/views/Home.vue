@@ -1,8 +1,15 @@
 <template>
   <div class="home">
-    <h1>All Lists</h1>
+    <h1>Your Lists</h1>
+    <div>
+      <div>
+        Enter Name of New List:
+        <input type="text" v-model="newListName" />
+        <button v-on:click="createList()">Create A New List</button>
+      </div>
+    </div>
     <div v-for="list in lists">
-      <h2>{{ list.name }}</h2>
+      <ul>{{ list.name }}</ul>
     </div>
   </div>
 </template>
@@ -15,7 +22,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      lists: []
+      lists: [],
+      newListName: ""
     };
   },
   created: function() {
@@ -24,6 +32,21 @@ export default {
       this.lists = response.data;
     });
   },
-  methods: {}
+  methods: {
+    createList: function() {
+      var params = { name: this.newListName };
+      axios
+        .post("/api/lists", params)
+        .then(response => {
+          this.lists.push(response.data);
+          this.newListName = "";
+          window.location.reload();
+        })
+        .catch(error => {
+          console.log(error.response);
+          this.errors = error.response.data.errors;
+        });
+    }
+  }
 };
 </script>
