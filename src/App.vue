@@ -16,7 +16,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #1565c0;
+  color: #006a71;
+  background-color: #ebecf1;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
 }
 
 .item {
@@ -33,7 +37,7 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #1565c0;
+  color: #006a71;
 }
 
 .text-danger {

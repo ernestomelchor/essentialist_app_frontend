@@ -22,34 +22,34 @@
 import axios from "axios";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       lists: [],
       newListName: "",
-      errors: []
+      errors: [],
     };
   },
-  created: function() {
-    axios.get("/api/lists").then(response => {
+  created: function () {
+    axios.get("/api/lists").then((response) => {
       console.log("lists:", response);
       this.lists = response.data;
     });
   },
   methods: {
-    createList: function() {
+    createList: function () {
       var params = { name: this.newListName };
       axios
         .post("/api/lists", params)
-        .then(response => {
+        .then((response) => {
           this.lists.push(response.data);
           this.newListName = "";
           window.location.reload();
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
-    }
-  }
+    },
+  },
 };
 </script>
