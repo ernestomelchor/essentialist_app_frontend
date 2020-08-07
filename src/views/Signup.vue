@@ -34,34 +34,34 @@
 import axios from "axios";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       name: "",
       email: "",
       username: "",
       password: "",
       passwordConfirmation: "",
-      errors: []
+      errors: [],
     };
   },
   methods: {
-    submit: function() {
+    submit: function () {
       var params = {
         name: this.name,
-        email: this.email,
         username: this.username,
+        email: this.email,
         password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password_confirmation: this.passwordConfirmation,
       };
       axios
         .post("/api/users", params)
-        .then(response => {
+        .then((response) => {
           this.$router.push("/login");
         })
-        .catch(error => {
+        .catch((error) => {
           this.errors = error.response.data.errors;
         });
-    }
-  }
+    },
+  },
 };
 </script>
