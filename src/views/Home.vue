@@ -12,7 +12,7 @@
     </div>
     <div v-for="list in lists">
       <router-link class="item" v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
-      <button class="delete-button">Delete</button>
+      <button class="delete-button" v-on:click="deleteList()">Delete</button>
     </div>
   </div>
 </template>
