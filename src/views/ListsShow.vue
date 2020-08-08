@@ -12,7 +12,10 @@
     </div>
     <div v-for="item in list.items" :key="item.id">
       <ul>
-        <li class="item">{{ item.description }}</li>
+        <li class="item">
+          {{ item.description }}
+          <button class="delete-button" v-on:click="destroyItem()">Delete</button>
+        </li>
       </ul>
     </div>
     <router-link to="/lists">Back to all lists</router-link>
