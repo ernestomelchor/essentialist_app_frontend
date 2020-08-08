@@ -60,8 +60,7 @@ export default {
     deleteItem: function (item) {
       axios.delete("/api/items/" + item.id).then((response) => {
         console.log(response.data);
-        var index = this.items.indexOf(item);
-        this.items.splice(index, 1);
+        window.location.reload();
       });
     },
   },
