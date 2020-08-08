@@ -3,7 +3,7 @@
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        <li class="text-danger" v-for="error in errors" :key="error.id">{{ error }}</li>
       </ul>
       <div class="form-group">
         <label>Name:</label>
