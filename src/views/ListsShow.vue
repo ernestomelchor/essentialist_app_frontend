@@ -14,7 +14,7 @@
       <ul>
         <li class="item">
           {{ item.description }}
-          <button class="delete-button" v-on:click="destroyItem()">Delete</button>
+          <button class="delete-button" v-on:click="deleteItem(item)">Delete</button>
         </li>
       </ul>
     </div>
@@ -56,6 +56,13 @@ export default {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    deleteItem: function (item) {
+      axios.delete("/api/items/" + item.id).then((response) => {
+        console.log(response.data);
+        var index = this.items.indexOf(item);
+        this.items.splice(index, 1);
+      });
     },
   },
 };
