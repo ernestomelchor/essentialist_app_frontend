@@ -25,6 +25,9 @@
   margin: 0 auto;
 }
 
+button.delete-button {
+  margin-left: 5px;
+}
 .item {
   list-style: none;
 }
