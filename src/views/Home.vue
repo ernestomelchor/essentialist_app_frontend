@@ -12,7 +12,7 @@
     </div>
     <div v-for="list in lists">
       <router-link class="item" v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
-      <button class="delete-button" v-on:click="deleteList()">Delete</button>
+      <button class="delete-button" v-on:click="deleteList(list)">Delete</button>
     </div>
   </div>
 </template>
@@ -50,6 +50,12 @@ export default {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
+    },
+    deleteList: function (list) {
+      axios.delete("/api/lists/" + list.id).then((response) => {
+        var index = this.lists.indexOf(list);
+        this.lists.splice(index, 1);
+      });
     },
   },
 };
