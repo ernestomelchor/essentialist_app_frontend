@@ -4,13 +4,13 @@
     <div>
       <div>
         <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+          <li class="text-danger" v-for="error in errors" :key="error.id">{{ error }}</li>
         </ul>
         <input type="text" v-model="newListName" />
         <button v-on:click="createList()">Create A New List</button>
       </div>
     </div>
-    <div v-for="list in lists">
+    <div v-for="list in lists" :key="list.id">
       <router-link class="item" v-bind:to="`/lists/${list.id}`">{{ list.name }}</router-link>
       <button class="delete-button" v-on:click="deleteList(list)">Delete</button>
     </div>
