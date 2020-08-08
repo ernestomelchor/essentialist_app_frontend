@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/lists">EssentiaLists</router-link>|
-      <router-link to="/about">About</router-link>|
-      <router-link to="/signup">Signup</router-link>|
-      <router-link to="/login">Login</router-link>|
+      <router-link to="/lists">EssentiaLists |</router-link>
+      <router-link to="/about">About |</router-link>
+      <router-link v-if="!jwt" to="/signup">Signup |</router-link>
+      <router-link v-if="!jwt" to="/login">Login |</router-link>
       <router-link to="/logout">Logout</router-link>
     </div>
     <router-view />
@@ -50,3 +50,21 @@ button.delete-button {
   list-style: none;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      jwt: null,
+    };
+  },
+  updated: function () {
+    this.setJwt();
+  },
+  methods: {
+    setJwt: function () {
+      this.jwt = localStorage.jwt;
+    },
+  },
+};
+</script>
