@@ -4,18 +4,18 @@
     <div>
       <div>
         <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+          <li class="text-danger" v-for="error in errors" :key="error.id">{{ error }}</li>
         </ul>
         <input type="text" v-model="newItemName" />
         <button v-on:click="createItem()">Add a New Item</button>
       </div>
     </div>
-    <div v-for="item in list.items">
+    <div v-for="item in list.items" :key="item.id">
       <ul>
         <li class="item">{{ item.description }}</li>
       </ul>
     </div>
-    <router-link to="/home">Back to all lists</router-link>
+    <router-link to="/lists">Back to all lists</router-link>
   </div>
 </template>
 

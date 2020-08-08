@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import ListsIndex from '../views/ListsIndex.vue';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import ListsShow from '../views/ListsShow.vue';
@@ -10,9 +10,9 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/home',
-    name: 'Home',
-    component: Home,
+    path: '/lists',
+    name: 'lists-index',
+    component: ListsIndex,
   },
   {
     path: '/about',

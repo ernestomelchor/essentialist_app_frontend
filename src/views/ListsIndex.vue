@@ -53,6 +53,7 @@ export default {
     },
     deleteList: function (list) {
       axios.delete("/api/lists/" + list.id).then((response) => {
+        console.log(response.data);
         var index = this.lists.indexOf(list);
         this.lists.splice(index, 1);
       });
